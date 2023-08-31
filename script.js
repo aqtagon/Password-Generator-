@@ -14,6 +14,11 @@ function writePassword() {
 
 function generatePassword() {
   var passwordLength = prompt("Enter password length (between 8 and 128 characters);");
+
+  if (!passwordLength || isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+    alert("Please enter a valid paswword length between 8 and 128 characters.");
+    return "";
+  }
 }
 
 // Add event listener to generate button
