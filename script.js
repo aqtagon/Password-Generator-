@@ -36,5 +36,24 @@ var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numericChars = "0123456789";
 var specialChars = "!@#$%^&*()_+[]{}|;:,.<>?";
 
+var availableChars = "";
+
+if (includeLowercase) {
+  availableChars += lowercaseChars;
+}
+
+if (includeUppercase) {
+  availableChars += uppercaseChars;
+}
+
+if (includeNumeric) {
+  availableChars += numericChars;
+}
+
+if (includeSpecial) {
+  availableChars += specialChars;
+}
+
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
