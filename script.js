@@ -19,10 +19,10 @@ function generatePassword() {
     alert("Please enter a valid paswword length between 8 and 128 characters.");
     return "";
   }
-}
+
 
 var includeLowercase = confirm("Include lowercase characters?");
-var includeUppercase = confrim("Include uppercase characters?");
+var includeUppercase = confirm("Include uppercase characters?");
 var includeNumeric = confirm("Include numeric characters?");
 var includeSpecial = confirm("Include special characters?");
 
@@ -54,6 +54,13 @@ if (includeSpecial) {
   availableChars += specialChars;
 }
 
+var generatedPassword = "";
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+for (var i = 0; i < passwordLength; i++) {
+  var randomIndex = Math.floor(Math.random() * availableChars.length);
+  generatedPassword += availableChars[randomIndex];
+}
+
+return generatedPassword;
+}
+
